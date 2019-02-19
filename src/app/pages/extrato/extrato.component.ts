@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
+import { ExtratoService } from '../../services/extrato.service';
+import { Extrato } from '../../services/extrato';
 
 @Component({
   selector: 'app-extrato',
@@ -8,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExtratoComponent implements OnInit {
 
-  constructor() { }
+  private extratos: Extrato[] = new Array();
+
+  constructor(private extratoService: ExtratoService, private router: Router) { }
 
   ngOnInit() {
+
+    this.extratoService.getExtratos().subscribe(res => this.extratos = res);
   }
 
 }
