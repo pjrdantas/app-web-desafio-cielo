@@ -1,0 +1,32 @@
+<div class="contanier text-center pb-5">
+  <h1>Extrato</h1>
+</div>
+<div class="bg-light">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col-sm-1">Data de Lançamento</th>
+        <th scope="col-sm-1">Descrição</th>
+        <th scope="col-sm-1">Numero</th>
+        <th scope="col-sm-1">Situação</th>
+        <th scope="col-sm-1">Data de Confirmação</th>
+        <th scope="col">Dados Bancarios</th>
+        <th scope="col-sm-1">Valor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let extrato of extratos; let i = index;">
+        <td>{{ extrato.dataLancamento }}</td>
+        <td>{{ extrato.descricao }}</td>
+        <td>{{ extrato.numero }}</td>
+        <td>{{ extrato.situacao }}</td>
+        <td>{{ extrato.dataConfirmacao }}</td>
+        <td>{{ extrato.dadosBancario }}</td>
+        <td>{{ extrato.valorFinal }}</td>
+      </tr>
+      <tr>
+        <td colspan="6" style="text-align: right;">Total de Registros: {{ extratos.length }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
